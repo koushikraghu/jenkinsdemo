@@ -5,8 +5,6 @@ podTemplate(label: label, serviceAccount: serviceaccount,imagePullSecrets: ['amr
                 containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat')])
 {
 node (label) {
-            
-            sleep 3600
     stage('Checkout Source') {
         git url:'https://github.com/koushikraghu/jenkinsdemo.git', branch:'test-deploy-stage'
       }
