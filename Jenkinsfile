@@ -1,4 +1,8 @@
 def label = "kubepod"
+def serviceaccount = "jenkins-admin"
+podTemplate(label: label, serviceAccount: serviceaccount,imagePullSecrets: ['amrutha'],
+            containers: [
+                containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat')])
 {
 node (label) {
 
